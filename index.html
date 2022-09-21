@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5,user-scalable=yes"
+    />
+    <title>NovaGuide View</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./images/icons/ios/60px.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./images/icons/ios/76px.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./images/icons/ios/120px.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="150x150"
+      href="./images/icons/ios/150px.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./images/icons/ios/152px.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/icons/ios/180px.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="256x256"
+      href="./images/icons/ios/256px.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="512x512"
+      href="./images/icons/ios/512px.png"
+    />
+    <link
+      rel="icon shortcut"
+      type="image/png"
+      href="./images/icons/favicon/32px.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon shortcut"
+      type="image/png"
+      href="./images/icons/favicon/16px.png"
+      sizes="16x16"
+    />
+    <!-- <link rel="manifest" href="./manifest-45b980.webmanifest" /> -->
+    <link
+      rel="preconnect"
+      href="https://dev-galileo-core-api-jqehb2gl2a-uw.a.run.app"
+    />
+    <link rel="preconnect" href="https://www.googleapis.com" />
+    <link
+      rel="prefetch"
+      href="https://dev-galileo-core-api-jqehb2gl2a-uw.a.run.app/api/version"
+      as="fetch"
+      crossorigin="anonymous"
+    />
+    <meta name="theme-color" content="#00265F" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#00265F"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#00265F"
+    />
+    <style>
+      body {
+          background-color:#E5E5E5;
+          overscroll-behavior-y: contain;
+      }
+
+      #app {
+          display:none;
+      }
+
+      .main-row {
+          margin-right:0 !important;
+          margin-left:0  !important;
+      }
+
+      ::-webkit-scrollbar {
+          height: 10px;
+          width:  10px;
+          background: white;
+      }
+
+
+      ::-webkit-scrollbar-thumb {
+          background-color: #6c757d;
+      }
+
+      ::-webkit-scrollbar-corner {
+          background:white;
+      }
+
+    </style>
+    <script
+      defer="defer"
+      src="./assets/JS/login_style/runtime.666.8ae60dbd.js?02709bb8456c7f9cd24a"
+    ></script>
+    <script
+      defer="defer"
+      src="./assets/JS/login_style/common.592.e820aa56.js?02709bb8456c7f9cd24a"
+    ></script>
+    <script
+      defer="defer"
+      src="./assets/JS/login_style/main.179.8a13b051.js?02709bb8456c7f9cd24a"
+    ></script>
+  </head>
+  <body>
+    <div
+      id="inlay"
+      clas="experimental"
+      style="position:fixed; width:100vw; height:100vh;background-color:#E5E5E5;"
+    ></div>
+    <div id="app">
+      <!-- top bar -->
+      <div id="navigation" class="container-fluid">
+        <nav class="start-navbar navbar ns-navbar sticky-top navbar-dark bg-primary navbar-expand-md">
+          <a href="#"
+            ><img
+              alt="logo"
+              src="./assets/images/icons/NovaSignalWhiteLogo.svg"
+              style="height:38px;margin-right:0.5rem;"
+            />
+          </a>
+          <a href="#" class="navbar-brand"
+            ><h4
+              class="text-light"
+              style="position: absolute; top:13px; left:64px;"
+            >
+              NovaGuide View
+            </h4></a
+          >
+          <div
+            id="spinner"
+            style="position:absolute;top: 14px;right:0.5rem;"
+            class="lds-ring"
+          >
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <button
+            disabled="disabled"
+            style="border:none;"
+            type="button"
+            aria-label="Toggle navigation"
+            class="navbar-toggler collapsed"
+            aria-expanded="false"
+            aria-controls="nav_collapse"
+            style="overflow-anchor: none;"
+          >
+            <span class="navbar-toggler-icon" style="background:none;"></span>
+          </button>
+        </nav>
+      </div>
+      <!-- login form -->
+      <div class="col" style="top: 15rem;">
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input id="user" type="text" placeholder="Enter Username" name="uname" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+          
+          <label for="role"><b>Role</b></label>
+
+          <!-- select -->
+          <select class="select" id="role">
+            <option value="Choice 1">Reviewing Physician</option>
+            <option value="Choice 2">Sonographer</option>
+            <option value="Choice 3">IT Manager</option>
+            <option value="Choice 4">Patient</option>
+          </select>
+
+          <br></br>
+
+          <a href="./main.html"><button type="submit" onclick="login()">Login</button></a>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+      
+        
+      </div>
+      
+      <!-- onclick -->
+    </div>
+    <script src="./assets/JS/login.js">
+    </script>
+    <!-- dropdown style -->
+    <style>
+     @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+      div.col {
+        width: 500px;
+        margin: auto;
+      }
+      
+
+      .select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      
+      input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #00265f;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+
+      .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+      }
+
+      .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+      }
+
+      img.avatar {
+        width: 40%;
+        border-radius: 50%;
+      }
+
+      .container {
+        padding: 16px;
+      }
+
+      span.psw {
+        float: right;
+        padding-top: 16px;
+      }
+
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+        span.psw {
+          display: block;
+          float: none;
+        }
+        .cancelbtn {
+          width: 100%;
+        }
+      }
+
+      
+    </style>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Video Annotation</title>
+    
+
+    <script type="module" src="./assets/JS/index.js"></script>
+    <!-- to load jqurey -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="./assets/JS/video.min.js"></script>
+    <!-- <script src="./assets/JS/build/videojs-annotation-comments.js"></script> -->
+    <script src="./assets/JS/build/videojs-annotation-comments.min.js"></script>
+    
+    <!-- style -->
+    <link href="./assets/CSS/video-js.min.css" rel="stylesheet"/>
+    <link href="./assets/CSS/annotations.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    
+    <h1>Video Annotation Tool demo</h1>
+    <button id='clearBut'> Clear Data </button>
+    <div class="annotTable" id="showAnnot_displays">
+    </div>
+    
+    
+
+
+    <video id="vid1" class="video-js">
+        <source src="./assets/sample.mp4" type="video/mp4">
+    </video>
+</body>
+
+
+<style>
+    .video-js {
+        width: 55%;
+        height: 700px
+    }
+
+
+    table {
+        /* border-collapse: collapse; */
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        text-align: left;
+        /* size */
+        padding: 4px; 
+    }
+
+    /* tr:nth-child(even) {
+        background-color: #f2f2f2;
+    } */
+
+    .annotTable {
+        width: 55%;
+        padding: 10px;
+        /* display: inline-block; */
+        height:200px;
+        overflow: scroll;
+    }
+
+
+</style>
+</html>
