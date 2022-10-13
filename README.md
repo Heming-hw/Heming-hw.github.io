@@ -1,6 +1,6 @@
 # Video Annotation Tool -- POC
 
-1. **index.html:** the login page. You don't need to put down any password in the login page -- it's just a placeholder for demo purpose.
+1. **index.html:** the login page. **You don't need to put down any password in the login page -- it's just a placeholder for demo purpose.**
 2. **main.html:** the main page that displays the video. 
 3. **data.js:** handle data cleaning and processing. 
 4. **display.js:** handle how the annotation data is diplayed to users in a table format. 
